@@ -1,13 +1,21 @@
 import java.io.*;
+import java.util.Scanner;
+
 import org.apache.commons.net.ftp.*;
 
 public class BasicFTP {
 	
 	public static void main (String[] args) {
 		
+		// Declarem el Scanner
+		Scanner teclado = new Scanner(System.in);
+		
 		//Servidor FTP
 		FTPClient client = new FTPClient();
-		String ServerFTP = "ftp.urv.es";
+		// Demanem el nom del servidor FTP i el guardem
+		System.out.println("Introdueix el servidor FTP al que et "
+				+ "vols conectar(ex: ftp.urv.es)");
+		String ServerFTP = teclado.nextLine();
 		System.out.println("Ens connectem al servidor: "+ServerFTP);
 		
 		//Usuari FTP
